@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dokhy2jp6o3xc"]
+
+[ext_resource type="Script" path="res://sheet_contact.gd" id="1_nuscj"]
+
+[node name="Sheet Contact" type="Node"]
+script = ExtResource("1_nuscj")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 350.0
+offset_bottom = 102.0
+text = "stuff"

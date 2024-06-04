@@ -1,0 +1,190 @@
+[gd_scene load_steps=5 format=3 uid="uid://btcx8dbdlnqan"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_2b18g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmqgu"]
+bg_color = Color(0.921569, 0.301961, 0.592157, 0.603922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abtel"]
+bg_color = Color(0.356863, 0.301961, 0.921569, 0.603922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fw7ph"]
+bg_color = Color(0.301961, 0.921569, 0.356863, 0.603922)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2b18g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -348.0
+offset_top = 133.0
+offset_right = 354.0
+offset_bottom = 268.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xmqgu")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -348.0
+offset_top = 290.0
+offset_right = 354.0
+offset_bottom = 763.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_abtel")
+
+[node name="Aoth" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.5
+offset_top = 140.0
+offset_right = 335.5
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "set Aoth key"
+
+[node name="home" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -99.0
+offset_top = 25.0
+offset_right = -17.0
+offset_bottom = 116.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "🏠"
+
+[node name="sheetID" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.5
+offset_top = 300.0
+offset_right = 335.5
+offset_bottom = 336.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "add spreadSheet ID"
+
+[node name="sheetName" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.5
+offset_top = 357.0
+offset_right = 335.5
+offset_bottom = 393.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "add spreadSheet Name"
+
+[node name="subSheetList" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -335.0
+offset_top = 421.0
+offset_right = 336.0
+offset_bottom = 666.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+placeholder_text = "add spreadSheet subsheets (comma seperated list, no spaces)"
+
+[node name="Aothconfirm" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -330.0
+offset_top = 203.0
+offset_right = -219.0
+offset_bottom = 252.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "confirm"
+
+[node name="Sheetconfirm" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -332.0
+offset_top = 690.0
+offset_right = -221.0
+offset_bottom = 739.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "confirm"
+
+[node name="Panel4" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -349.0
+offset_top = 772.0
+offset_right = 353.0
+offset_bottom = 1252.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fw7ph")
+
+[node name="confirmationLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_top = 11.0
+offset_right = 717.0
+offset_bottom = 69.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Action Confirmed!"
+horizontal_alignment = 1
+
+[node name="Tree" type="Tree" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -340.0
+offset_top = 780.0
+offset_right = 342.0
+offset_bottom = 1244.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = 701.0
+offset_right = 261.0
+offset_bottom = 727.0
+grow_horizontal = 2
+text = "warning: edting preexisting sheets will reset scores"
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Aothconfirm" to="." method="_on_aothconfirm_pressed"]
+[connection signal="pressed" from="Sheetconfirm" to="." method="_on_sheetconfirm_pressed"]

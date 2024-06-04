@@ -1,0 +1,259 @@
+[gd_scene load_steps=12 format=3 uid="uid://by0bwv1ha0shh"]
+
+[ext_resource type="Script" path="res://card_viewer.gd" id="1_qsttt"]
+[ext_resource type="StyleBox" uid="uid://cit206l275vm7" path="res://card_viewer_button.tres" id="2_out40"]
+[ext_resource type="StyleBox" uid="uid://bmmrvhx4a1ni2" path="res://card_viewer_correct.tres" id="3_4517b"]
+[ext_resource type="StyleBox" uid="uid://wedy3nhqxref" path="res://card_viewer_wrong.tres" id="4_3vj8a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w624o"]
+bg_color = Color(0.321569, 0.211765, 0.501961, 0.952941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nc3fs"]
+bg_color = Color(0.203922, 0.705882, 0.396078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0egl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ueep"]
+
+[sub_resource type="Theme" id="Theme_k58n5"]
+Button/styles/normal = SubResource("StyleBoxFlat_l0egl")
+Panel/styles/panel = SubResource("StyleBoxFlat_4ueep")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3o46"]
+bg_color = Color(0.678431, 0.678431, 0.678431, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oabli"]
+
+[node name="card viewer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qsttt")
+metadata/_edit_vertical_guides_ = [360.0]
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w624o")
+
+[node name="home" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.0
+offset_top = 11.0
+offset_right = -11.0
+offset_bottom = 102.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "🏠"
+
+[node name="flipBack" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = -956.0
+offset_right = -162.0
+offset_bottom = -845.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+text = "↩️"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -1219.0
+offset_right = -104.0
+offset_bottom = -1179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nc3fs")
+
+[node name="back" type="Button" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -1183.0
+offset_right = -135.0
+offset_bottom = -1073.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k58n5")
+theme_override_font_sizes/font_size = 80
+text = "⬅️"
+
+[node name="forward" type="Button" parent="."]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -954.0
+offset_right = 142.0
+offset_bottom = -844.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+theme = SubResource("Theme_k58n5")
+theme_override_font_sizes/font_size = 80
+text = "⬅️"
+
+[node name="card" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -352.5
+offset_top = -854.0
+offset_right = 352.5
+offset_bottom = -465.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3o46")
+
+[node name="cardtext" type="Label" parent="card"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -389.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+theme_override_font_sizes/font_size = 75
+text = "default text"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="card/cardtext"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_oabli")
+
+[node name="cardButton" type="Button" parent="card/cardtext"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = ExtResource("2_out40")
+theme_override_styles/hover = ExtResource("2_out40")
+theme_override_styles/pressed = ExtResource("2_out40")
+theme_override_styles/disabled = ExtResource("2_out40")
+theme_override_styles/focus = ExtResource("2_out40")
+
+[node name="correct" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -449.0
+offset_right = -7.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_4517b")
+theme_override_styles/hover = ExtResource("3_4517b")
+theme_override_styles/pressed = ExtResource("3_4517b")
+theme_override_styles/disabled = ExtResource("3_4517b")
+theme_override_styles/focus = ExtResource("3_4517b")
+text = "✔️"
+
+[node name="incorrect" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -449.0
+offset_right = 243.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_3vj8a")
+theme_override_styles/hover = ExtResource("4_3vj8a")
+theme_override_styles/pressed = ExtResource("4_3vj8a")
+theme_override_styles/disabled = ExtResource("4_3vj8a")
+theme_override_styles/focus = ExtResource("4_3vj8a")
+text = "❌"
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 261.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 60
+text = "20/21"
+
+[node name="total" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 10.0
+offset_right = 67.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "GSFA"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="flipBack" to="." method="_on_flip_back_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="forward" to="." method="_on_forward_pressed"]
+[connection signal="pressed" from="card/cardtext/cardButton" to="." method="_on_card_button_pressed"]
+[connection signal="pressed" from="correct" to="." method="_on_correct_pressed"]
+[connection signal="pressed" from="incorrect" to="." method="_on_incorrect_pressed"]
